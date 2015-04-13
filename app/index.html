@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- Notice the ng-app Angular directive. This tells Angular where the application starts and also
-which module to associate the app with. In app.js we create the "dinnerPlanner" module. -->
 <html lang="en" ng-app="fighting">
   <head>
     <meta charset="utf-8">
@@ -30,8 +28,9 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
 
   </head>
   <body>
-	<div class="container">
-		<div class="navbar navbar-default">
+	<div class="container"> <!--Main container wrapping everything, including the partials -->
+		<!-- Header present on every page -->
+		<div class="page-header">
 	    	<h1><img src="http://goo.gl/rT8ndl" style="width:100px"> Rate you KTH course</h1>
 		</div>
 		<div ng-view></div>

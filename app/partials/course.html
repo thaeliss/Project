@@ -1,0 +1,78 @@
+<!-- Page for the individual courses. Will go based on course code -->
+
+<ng-include></ng-include>
+
+<div class="row">
+	 <div class="col-sm-12" style="border-style:solid;border-width:1px">
+		Gör ett anrop till APIn http://www.kth.se/api/kopps/v2/courses/DEPARTMENT.json med korrekt department-kod
+
+	</div>
+	<div class="col-sm-12" id="course-info">
+		<h2>{{course.code}} {{course.title}}</h2>
+		<p>{{course.info}}</p>
+		<p>Poäng: {{course.credits}}</p>
+		<p>Nivå: {{course.level}}</p>
+		<p>Länk: <a href={{course.href}}>{{course.href}}</a></p>
+	</div>
+
+	<div class=class="col-sm-12" id="course-rating">
+		<h1>Your rating: &#9733; &#9733; &#9733; &#9734; &#9734;</h1>
+		<h1>Average rating: &#9733; &#9733; &#9734; &#9734; &#9734;</h1>
+	</div>
+</div>
+
+
+<div>
+    <h4>Leave a Comment:</h4>
+    <form role="form">
+        <div class="form-group">
+            <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<hr>
+
+<!-- Comment -->
+<div class="row">
+	<div class="col-sm-6>
+	    <a class="pull-left" href="#">
+	        <img class="media-object" src="http://placehold.it/64x64" alt="">
+	    </a>
+	    <div class="media-body">
+	        <h4 class="media-heading">Start Bootstrap
+	            <small>August 25, 2014 at 9:30 PM</small>
+	        </h4>
+	        It was okay
+	    </div>
+	</div>
+</div>
+
+<div class="row">	
+	<div class="col-sm-6">
+	    <a class="pull-left" href="#">
+	        <img class="media-object" src="http://placehold.it/64x64" alt="">
+	    </a>
+	    <div class="media-body">
+	        <h4 class="media-heading">Start Bootstrap
+	            <small>August 25, 2014 at 9:30 PM</small>
+	        </h4>
+	        It was horrible.
+	        <!-- Nested Comment -->
+	        <div class="media">
+	            <a class="pull-left" href="#">
+	                <img class="media-object" src="http://placehold.it/64x64" alt="">
+	            </a>
+	            <div class="media-body">
+	                <h4 class="media-heading">Nested Start Bootstrap
+	                    <small>August 25, 2014 at 9:30 PM</small>
+	                </h4>
+	                 it was awesome
+	            </div>
+	        </div>
+	        <!-- End Nested Comment -->
+	    </div>
+	</div>
+
+</div>
