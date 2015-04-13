@@ -1,0 +1,11 @@
+<ng-include></ng-include>
+
+<div class="row">
+	 <div class="col-sm-12" style="border-style:solid;border-width:1px">
+		Gör ett anrop till APIn http://www.kth.se/api/kopps/v2/courses/DEPARTMENT.json med korrekt department-kod
+
+	</div>
+	<div class="col-sm-4"ng-repeat="course in list.courses">
+		<a ng-href="#/course/" class="btn btn-info" style="margin-top:20px">{{course.code}} {{course.title | limitTo:15}}...</a>
+	</div>
+</div>
