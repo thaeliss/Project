@@ -5,7 +5,35 @@
 // the next time.
 fightingApp.factory('Fight',function ($resource, $cookieStore) {
   	
-  	//Hardcoded courselist, will be replaced with calls to database using the departments code, i.e DD, DD, DH and so on
+  	
+
+    // %%%%%%%%%%%%%%%%%%%% - RESTful API stuff STUFF - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/*    this.kthDep = $resource('https://www.kth.se/api/kopps/v2/departments.sv.json');
+    this.kthCourses = $resource('https://www.kth.se/api/kopps/v2/courses/DM.json');
+    this.fire = $resource("https://scorching-torch-815.firebaseio.com/.json");
+    this.big = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:'dvxboyJ189vozA489j7I91oi0mHV329G'});
+
+    this.kthDep.query({},function(data)
+    {
+        console.log("######## its probably working #########");
+//        console.log(data);
+    },function(data)
+        {
+            console.log("not working?");
+        }
+    );
+
+
+    // 
+    var myFirebaseRef = new Firebase("https://scorching-torch-815.firebaseio.com/");
+
+
+*/
+
+    // %%%%%%%%%%%%%%%%%%%% - FIREBASE STUFF - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+//Hardcoded courselist, will be replaced with calls to database using the departments code, i.e DD, DD, DH and so on
 	this.courselistDD = {
     "department": "CSC/Datalogi",
     "courses": [

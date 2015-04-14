@@ -4,6 +4,16 @@
 
 fightingApp.controller('DepartmentCtrl', function ($scope,$routeParams,Fight) {
 
+/*	$scope.call = this.kthDep.query({},function(data)
+    {
+        console.log("######## its probably working #########");
+        console.log(data);
+    },function(data)
+        {
+            console.log("not working?");
+        }
+    );*/
+	
 	console.log($routeParams.code);
 	
 	if($routeParams.code === 'DA'){
