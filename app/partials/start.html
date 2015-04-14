@@ -3,8 +3,9 @@
 <!-- TODO generate based on output from  
 http://www.kth.se/api/kopps/v2/departments.en.json -->
 
-	<div class="row">	    
-	      	<a ng-href="#/department/{{department.code}}" class="btn btn-info" ng-repeat="department in departments" style="margin:20px">
-		    	<h4>{{department.name}}</h4>
-			</a>
+	<div class="row">	 
+		<h2>Choose the department your course is given by</h2>
+      	<a ng-href="#/department/{{department.code}}" class="btn btn-primary" ng-repeat="department in departments" style="margin:20px">
+	    	<h4>{{department.name}}</h4>
+		</a>
 	 </div>

@@ -7,7 +7,7 @@
 		Gör ett anrop till APIn http://www.kth.se/api/kopps/v2/courses/DEPARTMENT.json med korrekt department-kod
 
 	</div>
-	<div class="col-sm-12" id="course-info">
+	<div class="col-sm-6" id="course-info">
 		<h2>{{course.code}} {{course.title}}</h2>
 		<p>{{course.info}}</p>
 		<p>Poäng: {{course.credits}}</p>
@@ -15,10 +15,22 @@
 		<p>Länk: <a href={{course.href}}>{{course.href}}</a></p>
 	</div>
 
-	<div class=class="col-sm-12" id="course-rating">
-		<h1>Your rating: &#9733; &#9733; &#9733; &#9734; &#9734;</h1>
-		<h1>Average rating: &#9733; &#9733; &#9734; &#9734; &#9734;</h1>
+	<div class="col-sm-6" id="your-run">
+		<h2>Your experiences</h2>
+		Year: <input type="text"></input><br>
+		<input type="checkbox" name="1" value="1">P1
+		<input type="checkbox" name="2" value="2">P2
+		<input type="checkbox" name="3" value="3">P3
+		<input type="checkbox" name="4" value="4">P4
+		<br>Teacher: <input type="text"></input>
+		
+		<div class="col-sm-12" id="course-rating" style="padding:10px">
+			<h4>Your rating: &#9733; &#9733; &#9733; &#9734; &#9734;</h4>
+			<h4>Average rating: &#9733; &#9733; &#9734; &#9734; &#9734;</h4>
+		</div>
 	</div>
+
+	
 </div>
 
 
@@ -36,12 +48,12 @@
 
 <!-- Comment -->
 <div class="row">
-	<div class="col-sm-6>
+	<div class="col-sm-6">
 	    <a class="pull-left" href="#">
 	        <img class="media-object" src="http://placehold.it/64x64" alt="">
 	    </a>
 	    <div class="media-body">
-	        <h4 class="media-heading">Start Bootstrap
+	        <h4 class="media-heading" style="padding:10px">Student, i guess...
 	            <small>August 25, 2014 at 9:30 PM</small>
 	        </h4>
 	        It was okay
@@ -55,7 +67,7 @@
 	        <img class="media-object" src="http://placehold.it/64x64" alt="">
 	    </a>
 	    <div class="media-body">
-	        <h4 class="media-heading">Start Bootstrap
+	        <h4 class="media-heading" style="padding:10px">I'm a student!
 	            <small>August 25, 2014 at 9:30 PM</small>
 	        </h4>
 	        It was horrible.
@@ -65,7 +77,7 @@
 	                <img class="media-object" src="http://placehold.it/64x64" alt="">
 	            </a>
 	            <div class="media-body">
-	                <h4 class="media-heading">Nested Start Bootstrap
+	                <h4 class="media-heading" style="padding:10px">I'm also a student
 	                    <small>August 25, 2014 at 9:30 PM</small>
 	                </h4>
 	                 it was awesome
