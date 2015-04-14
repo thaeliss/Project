@@ -6,6 +6,34 @@
 fightingApp.factory('Fight',function ($resource, $cookieStore) {
   	
   	//Hardcoded courselist, will be replaced with calls to database using the departments code, i.e DD, DD, DH and so on
+
+    // %%%%%%%%%%%%%%%%%%%% - RESTful API stuff STUFF - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    this.kthDep = $resource('https://www.kth.se/api/kopps/v2/departments.sv.json');
+    this.kthCourses = $resource('https://www.kth.se/api/kopps/v2/courses/DM.json');
+    this.fire = $resource("https://scorching-torch-815.firebaseio.com/.json");
+    this.big = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:'dvxboyJ189vozA489j7I91oi0mHV329G'});
+
+    this.kthDep.query({},function(data)
+    {
+        console.log("######## its probably working #########");
+        console.log(data);
+    },function(data)
+        {
+            console.log("not working?");
+        }
+    );
+
+
+    // 
+    var myFirebaseRef = new Firebase("https://scorching-torch-815.firebaseio.com/");
+
+
+
+
+    // %%%%%%%%%%%%%%%%%%%% - FIREBASE STUFF - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 	this.courselistDD = {
     "department": "CSC/Datalogi",
     "courses": [
@@ -15,7 +43,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/2D5346",
             "info": "",
             "credits": "6,0",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "2D5324",
@@ -23,7 +51,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/2D5324",
             "info": "",
             "credits": "6,0",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "DD3324",
@@ -31,15 +59,15 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/DD3324",
             "info": "",
             "credits": "6,0",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "DD2388",
             "title": "Programsystemkonstruktion med .NET Framework",
             "href": "http://www.kth.se/student/kurser/kurs/DD2388",
-            "info": "<p>Kursen är en fortsättningskurs i datalogi som ger en god översikt över och träning i Microsofts .NET-teknologi. Kraven som ställts på utvecklare i .NET är vitt skilda, från RAD (Rapid Application Development) till långsiktigt hållbara affärssystem. Kursen har som ambition att så väl som möjligt, givet den avsatta tiden, förbereda er på näringslivets krav på utveckling med .NET-plattformen.<\/p>",
+            "info": "<p>Kursen &#228;r en forts&#228;ttningskurs i datalogi som ger en god &#246;versikt &#246;ver och tr&#228;ning i Microsofts .NET-teknologi. Kraven som st&#228;llts p&#229; utvecklare i .NET &#228;r vitt skilda, fr&#229;n RAD (Rapid Application Development) till l&#229;ngsiktigt h&#229;llbara aff&#228;rssystem. Kursen har som ambition att s&#229; v&#228;l som m&#246;jligt, givet den avsatta tiden, f&#246;rbereda er p&#229; n&#228;ringslivets krav p&#229; utveckling med .NET-plattformen.<\/p>",
             "credits": "7,5",
-            "level": "Avancerad nivå"
+            "level": "Avancerad nivÃ¥"
         },           
     	]
 	}
@@ -49,11 +77,11 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
     "courses": [            
             {
             "code": "DA225X",
-            "title": "Examensarbete inom datavetenskap och kommunikation, avancerad nivå",
+            "title": "Examensarbete inom datavetenskap och kommunikation, avancerad nivÃ¥",
             "href": "http://www.kth.se/student/kurser/kurs/DA225X",
             "info": "",
             "credits": "30,0",
-            "level": "Avancerad nivå"
+            "level": "Avancerad nivÃ¥"
         },
             {
             "code": "DA1004",
@@ -61,7 +89,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/DA1004",
             "info": "",
             "credits": "4,5",
-            "level": "Grundnivå"
+            "level": "GrundnivÃ¥"
         },
             {
             "code": "2D5600",
@@ -69,7 +97,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/2D5600",
             "info": "",
             "credits": "1,5",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "DA2205",
@@ -77,7 +105,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/DA2205",
             "info": "",
             "credits": "7,5",
-            "level": "Avancerad nivå"
+            "level": "Avancerad nivÃ¥"
         }           
     	]
 	}
@@ -91,7 +119,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/2D5353",
             "info": "",
             "credits": "3,0",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "DH3353",
@@ -99,7 +127,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/DH3353",
             "info": "",
             "credits": "3,0",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "2D5370",
@@ -107,7 +135,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/2D5370",
             "info": "",
             "credits": "7,5",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "DH3370",
@@ -115,7 +143,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/DH3370",
             "info": "",
             "credits": "7,5",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
         ]
 	}
@@ -129,7 +157,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/DM3510",
             "info": "",
             "credits": "7,5",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "DM3516",
@@ -137,7 +165,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/DM3516",
             "info": "",
             "credits": "7,5",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "2D5508",
@@ -145,7 +173,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/2D5508",
             "info": "",
             "credits": "6,0",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         },
             {
             "code": "DM3508",
@@ -153,7 +181,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "href": "http://www.kth.se/student/kurser/kurs/DM3508",
             "info": "",
             "credits": "6,0",
-            "level": "Forskarnivå"
+            "level": "ForskarnivÃ¥"
         }
         ]
 	}
@@ -165,7 +193,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
                 {"code": "DD",
         "name": "Datalogi"},
                 {"code": "DH",
-        "name": "Människa-datorinteraktion"},
+        "name": "MÃ¤nniska-datorinteraktion"},
                 {"code": "DM",
         "name": "Medieteknik och grafisk produktion"},
                 {"code": "DME",
@@ -173,7 +201,7 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
                 {"code": "DN",
         "name": "Numerisk analys"},
                 {"code": "DT",
-        "name": "Tal, musik och hörsel"}
+        "name": "Tal, musik och hÃ¶rsel"}
 		]
 	
 	//For testing and displaying, will not be here later. Instead it will be called from the courselist
@@ -181,9 +209,9 @@ fightingApp.factory('Fight',function ($resource, $cookieStore) {
             "code": "SF1624",
             "title": "Algebra och geometri",
             "href": "http://www.kth.se/student/kurser/kurs/SF1624",
-            "info": "Algebra och geometri är en grundläggande kurs i linjär algebra med vektorgeometri. Ett centralt begrepp i kursen är linjäritet som ligger till grund för stora delar av användningen av matematik inom såväl naturvetenskap som inom ingenjörstillämpningar.",
+            "info": "Algebra och geometri &#228;r en grundl&#228;ggande kurs i linj&#228;r algebra med vektorgeometri. Ett centralt begrepp i kursen &#228;r linj&#228;ritet som ligger till grund f&#246;r stora delar av anv&#228;ndningen av matematik inom s&#229;v&#228;l naturvetenskap som inom ingenj&#246;rstill&#228;mpningar.",
             "credits": "7,5",
-            "level": "Grundnivå"
+            "level": "GrundnivÃ¥"
         }
 	
   	return this;

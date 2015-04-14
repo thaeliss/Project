@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rating KTH</title>
+    <title>Hating on school</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Angular JavaScript including routing and resource modules  -->
@@ -25,14 +27,13 @@
 	<script src="js/courseCtrl.js"></script>
 	<script src="js/courselistCtrl.js"></script>
 	<script src="js/departmentCtrl.js"></script>
-<!--	<script src="js/starCtrl.js"></script>	-->
 
   </head>
   <body>
 	<div class="container"> <!--Main container wrapping everything, including the partials -->
 		<!-- Header present on every page -->
-		<div class="page-header" style="background-color:#E6E6E6;padding:15px">
-	    	<h1 style="margin:0px"><img src="icon.png" style="width:80px"> Rate you KTH course</h1>
+		<div class="page-header">
+	    	<h1><img src="http://goo.gl/rT8ndl" style="width:100px"> Rate you KTH course</h1>
 		</div>
 		<div ng-view></div>
 	</div>
